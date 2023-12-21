@@ -1,4 +1,4 @@
-[Uploading Crushhhh 1.h<!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -144,10 +144,3 @@ I don't need to?</p>
       <center> Thank you so much for reading! hope you gain a lil' bit of knowledge to this story.</center>
 
 
-
-
-    </main>
-</body>
-
-</html>
-tml…]()
