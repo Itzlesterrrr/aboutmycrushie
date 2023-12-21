@@ -85,7 +85,7 @@
 
             </p>But unfortunately, I found out na may karibal ako HAHA! I don't know if I'm the only one na kapag may nag ka
             gusto sa crush ko is parang mawawalan na'ko ng gana kasi may kaagaw ako eh HEHE!. Ayun siyempre ako naman tong si assuming
-            nag iisip na ay baka ako ang gusto non parang pinipilit ko sa isipan kong baka crush niya talaga ako?</p>
+            nag iisip na ay baka ako ang gusto non parang pinipilit ko sa isipan kong baka crush niya talaga ako?
 
 
 
