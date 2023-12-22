@@ -1,6 +1,71 @@
-
+[<!DOCTYPE html>
 <html lang="en">
 
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f6f6;
+    font-family: arial;
+}
+.container
+{
+    width: 600px;
+    border: 2px solid #333;
+    padding: 15px 10px;
+}
+.container h2
+{
+    text-align: center;
+    margin-bottom: 15px
+}
+textarea
+{
+    height: 20px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #aaa;
+    background-color: transparent;
+    margin-bottom: 10px;
+    resize: none;
+    outline: none;
+    transition: .5s
+}
+
+input[type="submit"], button
+{
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+input[type="submit"]
+{
+    color: #fff;
+    background-color: #273c75
+}
+button
+{
+    color: #333;
+    background-color: transparent
+}
+.btn
+{
+    display: none
+}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -85,7 +150,7 @@
 
             </p>But unfortunately, I found out na may karibal ako HAHA! I don't know if I'm the only one na kapag may nag ka
             gusto sa crush ko is parang mawawalan na'ko ng gana kasi may kaagaw ako eh HEHE!. Ayun siyempre ako naman tong si assuming
-            nag iisip na ay baka ako ang gusto non parang pinipilit ko sa isipan kong baka crush niya talaga ako?<p>
+            nag iisip na ay baka ako ang gusto non parang pinipilit ko sa isipan kong baka crush niya talaga ako?</p>
 
 
 
@@ -144,3 +209,103 @@ I don't need to?</p>
       <center> Thank you so much for reading! hope you gain a lil' bit of knowledge to this story.</center>
 
 
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Comment Section</title>
+          <style>
+              /* Add some basic styling for better presentation */
+              body {
+                  font-family: Arial, sans-serif;
+                  margin: 20px;
+              }
+              form {
+                  max-width: 400px;
+                  margin: auto;
+              }
+              label {
+                  display: block;
+                  margin-bottom: 8px;
+              }
+              input, textarea {
+                  width: 100%;
+                  padding: 8px;
+                  margin-bottom: 12px;
+              }
+              button {
+                  background-color: #4CAF50;
+                  color: white;
+                  padding: 10px 15px;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+              }
+              #comments {
+                  margin-top: 20px;
+              }
+          </style>
+      </head>
+      <body>
+      
+          <h2>Please write your insights</h2>
+      
+          <form id="commentForm">
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required>
+      
+              <label for="comment">Comment:</label>
+              <textarea id="comment" name="comment" rows="4" required></textarea>
+      
+              <button type="submit">Submit Comment</button>
+          </form>
+      
+          <div id="comments">
+              <!-- Display comments here -->
+          </div>
+      
+          <script>
+              document.getElementById("commentForm").addEventListener("submit", function(event) {
+                  event.preventDefault();
+      
+                  var name = document.getElementById("name").value;
+                  var comment = document.getElementById("comment").value;
+      
+                  // Send comment to the server
+                  fetch('/comments', {
+                      method: 'POST',
+                      headers: {
+                          'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({ name, comment }),
+                  })
+                  .then(response => response.json())
+                  .then(data => {
+                      // Clear the form
+                      document.getElementById("commentForm").reset();
+                      // Refresh comments
+                      getComments();
+                  });
+              });
+      
+              function getComments() {
+                  // Fetch comments from the server
+                  fetch('/comments')
+                      .then(response => response.json())
+                      .then(comments => {
+                          // Display comments
+                          var commentsDiv = document.getElementById("comments");
+                          commentsDiv.innerHTML = "";
+                          comments.forEach(comment => {
+                              var commentElement = document.createElement("div");
+                              commentElement.innerHTML = "<strong>" + comment.name + ":</strong> " + comment.comment;
+                              commentsDiv.appendChild(commentElement);
+                          });
+                      });
+              }
+      
+              // Initial load of comments
+              getComments();
+          </script>
+      
