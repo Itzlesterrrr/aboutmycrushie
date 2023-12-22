@@ -309,6 +309,4 @@ I don't need to?</p>
               getComments();
           </script>
       
-      </body>
-      </html>
-      
+    
