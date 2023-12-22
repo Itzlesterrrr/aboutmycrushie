@@ -1,4 +1,4 @@
-[<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 
@@ -308,4 +308,7 @@ I don't need to?</p>
               // Initial load of comments
               getComments();
           </script>
+      
+      </body>
+      </html>
       
